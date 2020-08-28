@@ -1,0 +1,160 @@
+<div class="header">
+	<nav class="navbar navbar-expand-lg ">
+  		<a class="navbar-brand ml-5 mt-5" href="#">DEMO APP</a>
+  		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    		<span class="navbar-toggler-icon"></span>
+  		</button>
+  		<div class="collapse navbar-collapse" id="navbarNav">
+    		<ul class="navbar-nav ml-auto mt-5 mr-5">
+      			<li class="nav-item ">
+        			<a class="nav-link" routerLink="/">HOME</a>
+      			</li>
+      			<li class="nav-item">
+        			<a class="nav-link" href="#">ABOUT US</a>
+      			</li>
+      			<li class="nav-item">
+        			<a class="nav-link" href="#">JOBS</a>
+      			</li>
+      			<li class="nav-item">
+        			<a class="nav-link " href="#">CLIENTS</a>
+      			</li>
+      			<li class="nav-item">
+        			<a class="nav-link " routerLink="/profile">PROFILE</a>
+      			</li>
+      			<li class="nav-item">
+        			<a class="nav-link " href="#">CONTACT US</a>
+      			</li>
+    		</ul>
+  		</div>
+	</nav>
+
+	<div class="title">
+		<h1>I'm looking for you...</h1>
+	</div>
+
+	<div class="input">
+		<div class="container banner_input">
+			<div class="row">
+				<div class="col-md-8 col-sm-12">
+					<input class="description  p-2" type="text" name="description" placeholder="Enter a job description">
+				</div>
+				<div class="col-md-4 col-sm-12">
+					<button class="btn btn-primary search_btn pt-2 pb-2"><i class="fa fa-search"></i><span class="search pl-2">Search</span></button>
+				</div>
+			</div>
+		</div>
+		<div class="container checkbox">
+			<div class="row">
+				<div class="col-md-8 col-sm-12">
+					<div class="row">
+						<div class="col-md-6 col-sm-12">
+							<div class="row">
+								<div class="col-md-4 col-sm-12">
+									<span><input id="fulltime" type="checkbox" name="fulltime"></span>&nbsp;<span class="fulltime text-white pl-1">Full Time</span>
+								</div>
+								<div class="col-md-8 col-sm-12">
+									<input type="checkbox" name="parttime">&nbsp;<span class="parttime text-white pl-1">Part Time/Casual/Freelance</span>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 col-sm-12">
+							<input class="location" type="text" name="location" placeholder="select your location">
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-12">
+				
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="register">
+		<button class="btn btn-primary btn_register text-center " (click)="showModal()"  >Register</button>
+	</div>	
+</div>
+
+<div class="modal fade" id="mymodal" [ngClass]="{'show':showModal}" *ngIf = "isDisplay" >
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h3 class="text-primary">Register</h3>
+				<button type="button" class="close" data-dismiss="modal" (click)="closeModal()">&times;</button>
+			</div>
+			<div class="modal-body">
+				<form #myForm = "ngForm" [formGroup]="registerForm" (ngSubmit)="addData(registerForm)">
+					<div class="form-group" >
+						<div class="row">
+							<div class="col-md-6">
+								<input type="text" class="form-control" placeholder="First name" formControlName="firstName" [(ngModel)]='userObj.firstName'>
+								<div *ngIf="registerForm.controls['firstName'].touched && !registerForm.controls['firstName'].valid">  
+									<span *ngIf="registerForm.controls['firstName'].hasError('required') ">  
+										First name is required  
+									</span>  
+								</div>
+							</div>
+							<div class="col-md-6">
+								<input type="text" class="form-control" placeholder="Last name" formControlName="lastName" [(ngModel)]='userObj.lastName'>
+								<div *ngIf="registerForm.controls['lastName'].touched && !registerForm.controls['lastName'].valid">  
+									<span *ngIf="registerForm.controls['lastName'].hasError('required') ">  
+										Last name is required  
+									</span>  
+								</div>
+							</div>
+						</div>
+						<input type="email" name="email" class="form-control mt-4" placeholder="Email" formControlName="email" [(ngModel)]='userObj.email'>
+						<div *ngIf="registerForm.controls['email'].touched && !registerForm.controls['email'].valid">  
+							<span *ngIf="registerForm.controls['email'].hasError('required') ">  
+							   Email ID is needed  
+							</span>  
+								
+						    <span *ngIf="registerForm.controls['email'].hasError('email') ">  
+							   Invalid Email ID  
+						    </span>  
+										   
+						</div>
+						<input type="number" name="phone" class="form-control mt-4" placeholder="Phone Number" formControlName="phoneNumber" [(ngModel)]='userObj.phoneNumber'>
+						<div *ngIf="registerForm.controls['phoneNumber'].touched && !registerForm.controls['phoneNumber'].valid">  
+							<span *ngIf="registerForm.controls['phoneNumber'].hasError('required') ">  
+								Phone number is required  
+							</span>  
+						</div>
+						<input type="number" name="age" class="form-control mt-4" placeholder="Age" formControlName="age" [(ngModel)]='userObj.age'>
+						<div *ngIf="registerForm.controls['age'].touched && !registerForm.controls['age'].valid">  
+							<span *ngIf="registerForm.controls['age'].hasError('required') ">  
+								Age is required  
+							</span>  
+						</div>		
+						<select class="form-control mt-4" placeholder="State" formControlName="state" [(ngModel)]='userObj.state'>
+  							<option>State</option>
+  							<option>Maharashtra</option>
+  							<option>Delhi</option>
+  							<option>Goa</option>
+						</select>
+						<select class="form-control mt-4" placeholder="Country" formControlName="country" [(ngModel)]='userObj.country'>
+  							<option>Country</option>
+  							<option>India</option>
+  							<option>US</option>
+  							<option>Japan</option>
+						</select>
+						<input type="text" name="address" class="form-control mt-4" placeholder="Address" formControlName="address" [(ngModel)]='userObj.address'>
+						<div *ngIf="registerForm.controls['address'].touched && !registerForm.controls['address'].valid">  
+							<span *ngIf="registerForm.controls['address'].hasError('required') ">  
+								Address is required  
+							</span>  
+						</div>
+						<input type="checkbox" class="form-check-input mt-3 ml-1" id="exampleCheck1">
+    					<label class="form-check-label mt-2 ml-4" for="exampleCheck1">Subscribe to our newsletter</label>
+    					<div class="row">
+    						<div class="col-md-6 mt-4">
+    							<button class="btn btn-default border-dark w-50" (click)="closeModal()">Cancel</button>
+    						</div>
+    						<div class="col-md-6 mt-4">
+    							<button class="btn btn-primary w-50" type="submit" [disabled]="!registerForm.valid">Submit</button>
+    						</div>
+    					</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

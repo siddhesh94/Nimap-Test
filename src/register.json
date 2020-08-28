@@ -1,0 +1,16 @@
+{
+  "users": [
+    {
+      "firstName": "siddhesh",
+      "lastName": "More",
+      "email": "siddheshmore556@gmail.com",
+      "phoneNumber": 9768276697,
+      "age": 25,
+      "state": "Maharashtra",
+      "country": "India",
+      "address": "SL Raheja Hospital Road",
+      "id": 1
+    }
+    
+  ]
+}

@@ -1,0 +1,189 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.header{
+	background-image: url("/assets/images/banner.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	opacity: 1;
+	position: relative;
+	height: 600px;
+
+}
+.nav-link{
+	color: #fff;
+	font-weight: bold;
+	text-decoration: none;
+}
+.navbar-brand{
+	color: #fff;
+	font-weight: bold;
+}
+.title{
+	color: #fff;
+	font-weight: bold;
+	position: absolute;
+	top: 40%;
+	left: 14%;
+}
+.search_btn{
+	width: 50%;
+}
+.banner_input{
+	position: absolute;
+	top: 60%;
+	left: 14%;
+
+}
+.description{
+	width: 90%;
+}
+.location{
+	padding-left: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	width: 80%;	
+}
+.checkbox{
+	position: absolute;
+	top: 80%;
+	left: 14%;
+}
+.register{
+	position: absolute;
+	left: 50%;
+	top: 90%;
+}
+.btn_register{
+	padding: 7px 25px;
+	font-weight: bold;
+}
+.section p{
+	margin-top: 80px;
+	width: 80%;
+	margin-left: 90px;
+	font-family: verdana;
+	color:gray;
+	font-size: small;
+}
+.section h1{
+	border-bottom: 3px solid #00BFFF;
+	font-family: verdana;
+
+}
+.section button{
+	font-size: small;
+	font-weight: bold;
+	padding: 15px;
+}
+.section h3{
+	font-family: sans-serif;
+	font-style: italic;
+}
+
+.subscribe .container p{
+	padding-top: 100px;
+	font-family: verdana;
+}
+.subscribe{
+	 background: #403D3D;
+	 height: 300px;
+}
+.subscribe input{
+	border: 2px solid #00BFFF;
+	border-radius: 8px;
+	background: #403D3D;
+	color: white;
+	width: 30%;
+	
+}
+.subscribe input::placeholder{
+	color: #fff;
+	font-style: italic;
+}
+
+.footer i{
+	font-size: 25px;
+	color: #00BFFF;
+}
+.footer input{
+	border: none;
+}
+.register_form{
+	background: #00BFFF;
+}
+
+.register_form i{
+	font-size: 25px;
+	color: #fff;
+}
+.slide{
+	width: 90%;
+}
+.img {
+	padding-left: 70px;
+
+}
+.register_form_page{
+	overflow-x: hidden;
+}
+.p_upload {
+	padding-left: 120px !important;
+}
+.profile img{
+	padding-left: 25px;
+	border: 1px solid;
+	margin-left: 90px; 
+}
+.edit{
+	margin-left: 70px;
+}
+.profile h3{
+	color: #00BFFF;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 768px){
+
+	.title h1{
+		font-size: 30px;
+		text-align: center;
+		padding-left: 40px;
+	}
+	.input input{
+		width: 50%;
+		margin-left: 40px;
+	}
+	.search_btn{
+		margin-top: 10px;
+		margin-left: 40px;
+	}
+	.checkbox #fulltime input{
+		border: 2px solid red;
+
+}
+
+
+}
